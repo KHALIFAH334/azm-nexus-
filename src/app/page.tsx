@@ -158,7 +158,7 @@ export default function LandingPage() {
                 Explore Solutions <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#contact" className="btn-action text-center">
-                Book a Demo
+                Book a Consultation
               </a>
             </div>
           </motion.div>
@@ -331,15 +331,6 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              <div className="flex gap-6 items-center">
-                <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-brand-action">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-brand-soft/40 text-sm font-bold uppercase tracking-wider">Call Us</p>
-                  <p className="text-xl font-medium">+234 (0) 800-AZM-NEXUS</p>
-                </div>
-              </div>
 
               <div className="flex gap-6 items-center">
                 <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-brand-action">
@@ -347,7 +338,7 @@ export default function LandingPage() {
                 </div>
                 <div>
                   <p className="text-brand-soft/40 text-sm font-bold uppercase tracking-wider">Headquarters</p>
-                  <p className="text-xl font-medium">Lagos, Nigeria</p>
+                  <p className="text-xl font-medium">Germany</p>
                 </div>
               </div>
             </div>
@@ -361,8 +352,8 @@ export default function LandingPage() {
                   <input type="text" className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Dr. John Doe" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-brand-dark mb-2">Organization</label>
-                  <input type="text" className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="City Medical Center" />
+                  <label className="block text-sm font-bold text-brand-dark mb-2">Organization (Optional)</label>
+                  <input type="text" className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="e.g. City Medical Center" />
                 </div>
               </div>
               <div>
@@ -371,7 +362,7 @@ export default function LandingPage() {
               </div>
               <div>
                 <label className="block text-sm font-bold text-brand-dark mb-2">How can we help?</label>
-                <textarea rows={4} className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Tell us about your project..."></textarea>
+                <textarea rows={4} className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Tell us how we can help with your healthcare needs..."></textarea>
               </div>
               <button className="w-full btn-primary py-5 text-lg font-bold shadow-brand-teal/20 shadow-xl">
                 Send Strategic Request
