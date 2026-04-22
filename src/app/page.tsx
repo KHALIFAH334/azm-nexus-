@@ -75,13 +75,23 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      setIsOpen(false);
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          {/* Logo Placeholder */}
-          <div className="bg-brand-teal p-1.5 rounded-lg">
-            <Activity className="w-6 h-6 text-white" />
+          <div className="relative w-10 h-10 overflow-hidden rounded-xl shadow-inner bg-white">
+            <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain p-1" />
           </div>
           <span className="text-xl font-bold tracking-tight text-brand-dark">
             AZM <span className="text-brand-teal">Nexus</span>
@@ -91,11 +101,11 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {SECTIONS.map((sec) => (
-            <a key={sec.id} href={`#${sec.id}`} className="nav-link">
+            <a key={sec.id} href={`#${sec.id}`} onClick={(e) => handleNavClick(e, sec.id)} className="nav-link">
               {sec.label}
             </a>
           ))}
-          <a href="#contact" className="btn-primary py-2 text-sm">Get Started</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="btn-primary py-2 text-sm">Get Started</a>
         </div>
 
         {/* Mobile Toggle */}
@@ -115,11 +125,11 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-4 p-6">
               {SECTIONS.map((sec) => (
-                <a key={sec.id} href={`#${sec.id}`} onClick={() => setIsOpen(false)} className="text-lg font-medium text-brand-dark">
+                <a key={sec.id} href={`#${sec.id}`} onClick={(e) => handleNavClick(e, sec.id)} className="text-lg font-medium text-brand-dark">
                   {sec.label}
                 </a>
               ))}
-              <a href="#contact" onClick={() => setIsOpen(false)} className="btn-primary text-center">Get Started</a>
+              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="btn-primary text-center">Get Started</a>
             </div>
           </motion.div>
         )}
@@ -344,9 +354,9 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="bg-white p-10 rounded-[3rem] shadow-2xl">
-            <form className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
+          <div className="bg-white p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] shadow-2xl mx-auto w-full max-w-2xl lg:max-w-none">
+            <form className="space-y-4 sm:space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-sm font-bold text-brand-dark mb-2">Full Name</label>
                   <input type="text" className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Dr. John Doe" />
@@ -364,7 +374,7 @@ export default function LandingPage() {
                 <label className="block text-sm font-bold text-brand-dark mb-2">How can we help?</label>
                 <textarea rows={4} className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Tell us how we can help with your healthcare needs..."></textarea>
               </div>
-              <button className="w-full btn-primary py-5 text-lg font-bold shadow-brand-teal/20 shadow-xl">
+              <button className="w-full btn-primary py-4 sm:py-5 text-lg font-bold shadow-brand-teal/20 shadow-xl">
                 Send Strategic Request
               </button>
             </form>
@@ -376,7 +386,9 @@ export default function LandingPage() {
       <footer className="bg-white py-12 border-t">
         <div className="section-container flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <Activity className="w-6 h-6 text-brand-teal" />
+            <div className="relative w-8 h-8 overflow-hidden rounded-lg bg-white">
+               <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain p-0.5" />
+            </div>
             <span className="text-xl font-bold tracking-tight text-brand-dark">AZM <span className="text-brand-teal">Nexus</span></span>
           </div>
 
