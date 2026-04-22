@@ -101,13 +101,24 @@ const Navbar = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      setIsOpen(false);
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
-    }
+    setIsOpen(false);
+    
+    // Increased delay and manual scroll calculation to ensure it works after menu closes
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 100; // Account for navbar height
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 400);
   };
 
   return (
@@ -182,8 +193,8 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-brand-soft/30 to-transparent rounded-bl-full" />
+      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden dark:bg-[#0F2529]">
+        <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-brand-soft/30 dark:from-brand-teal/10 to-transparent rounded-bl-full" />
         <div className="section-container grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -229,7 +240,7 @@ export default function LandingPage() {
       </section>
 
       {/* Solutions Section */}
-      <section id="solutions" className="bg-brand-dark text-white py-24">
+      <section id="solutions" className="bg-brand-dark dark:bg-black/40 text-white py-24">
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Core Solutions</h2>
@@ -261,7 +272,7 @@ export default function LandingPage() {
       </section>
 
       {/* About Section & Stats */}
-      <section id="about" className="py-24 overflow-hidden">
+      <section id="about" className="py-24 overflow-hidden dark:bg-[#0F2529]">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
@@ -299,7 +310,7 @@ export default function LandingPage() {
       </section>
 
       {/* Process Section */}
-      <section id="process" className="bg-brand-soft/20 py-24 border-y border-brand-teal/10">
+      <section id="process" className="bg-brand-soft/20 dark:bg-white/5 py-24 border-y border-brand-teal/10 dark:border-white/10">
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Methodology</h2>
@@ -325,7 +336,7 @@ export default function LandingPage() {
       </section>
 
       {/* Capabilities Section */}
-      <section id="capabilities" className="py-24">
+      <section id="capabilities" className="py-24 dark:bg-[#0F2529]">
         <div className="section-container">
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
@@ -359,9 +370,9 @@ export default function LandingPage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-brand-dark relative overflow-hidden">
+      <section id="contact" className="py-24 bg-brand-dark dark:bg-[#081517] relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-action" />
-        <div className="section-container grid lg:grid-cols-2 gap-20">
+        <div className="section-container grid lg:grid-cols-2 gap-20 px-6">
           <div className="text-white">
             <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br/>with Our Team</h2>
             <p className="text-xl text-brand-soft/60 mb-12">
@@ -392,7 +403,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-brand-dark/40 dark:border dark:border-white/10 p-8 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl mx-auto w-full max-w-2xl lg:max-w-none">
+          <div className="bg-white dark:bg-white/5 dark:backdrop-blur-xl dark:border dark:border-white/10 p-6 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl mx-auto w-full max-w-2xl lg:max-w-none overflow-hidden">
             <form className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>

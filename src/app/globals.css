@@ -11,8 +11,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: white;
+  @apply bg-white dark:bg-[#0F2529] text-brand-dark dark:text-white;
   scroll-behavior: smooth;
 }
 
