@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Activity, Shield, Users, Globe, BarChart3, 
   Smartphone, MessageSquare, Zap, Target, Search, Settings,
-  CheckCircle2, Mail, Phone, MapPin, ArrowRight, Instagram, Twitter, Linkedin
+  CheckCircle2, Mail, Phone, MapPin, ArrowRight, Instagram, Twitter, Linkedin,
+  Moon, Sun
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -68,12 +69,35 @@ const CAPABILITIES = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    const newDark = !isDark;
+    setIsDark(newDark);
+    if (newDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -87,31 +111,45 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="relative w-10 h-10 overflow-hidden rounded-xl shadow-inner bg-white">
             <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain p-1" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-brand-dark">
+          <span className="text-xl font-bold tracking-tight text-brand-dark dark:text-white">
             AZM <span className="text-brand-teal">Nexus</span>
           </span>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {SECTIONS.map((sec) => (
-            <a key={sec.id} href={`#${sec.id}`} onClick={(e) => handleNavClick(e, sec.id)} className="nav-link">
+            <a key={sec.id} href={`#${sec.id}`} onClick={(e) => handleNavClick(e, sec.id)} className="nav-link dark:text-white/80 dark:hover:text-brand-teal">
               {sec.label}
             </a>
           ))}
-          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="btn-primary py-2 text-sm">Get Started</a>
+          <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-brand-soft/20 dark:hover:bg-white/10 transition-colors text-brand-dark dark:text-white"
+          >
+            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="btn-primary py-2 text-sm px-6">Get Started</a>
         </div>
 
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-brand-dark" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        {/* Mobile Toggle & Theme Toggle */}
+        <div className="flex items-center gap-4 md:hidden">
+          <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-brand-soft/20 dark:hover:bg-white/10 transition-colors text-brand-dark dark:text-white"
+          >
+            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+          <button className="text-brand-dark dark:text-white" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -121,11 +159,11 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b overflow-hidden shadow-xl"
+            className="md:hidden bg-white dark:bg-brand-dark border-b dark:border-white/10 overflow-hidden shadow-xl"
           >
             <div className="flex flex-col gap-4 p-6">
               {SECTIONS.map((sec) => (
-                <a key={sec.id} href={`#${sec.id}`} onClick={(e) => handleNavClick(e, sec.id)} className="text-lg font-medium text-brand-dark">
+                <a key={sec.id} href={`#${sec.id}`} onClick={(e) => handleNavClick(e, sec.id)} className="text-lg font-medium text-brand-dark dark:text-white">
                   {sec.label}
                 </a>
               ))}
@@ -155,11 +193,11 @@ export default function LandingPage() {
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-brand-teal bg-brand-soft/50 rounded-full">
               NEXT-GEN TELEMEDICINE
             </span>
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 dark:text-white">
               Healthcare at the <br/>
               <span className="gradient-text">Speed of Connection</span>
             </h1>
-            <p className="text-xl text-brand-dark/70 mb-10 max-w-lg leading-relaxed">
+            <p className="text-xl text-brand-dark/70 dark:text-white/60 mb-10 max-w-lg leading-relaxed">
               AZM Nexus bridges the gap between expert care and patient accessibility. 
               Deploying enterprise-grade virtual solutions tailored for the modern medical era.
             </p>
@@ -325,9 +363,9 @@ export default function LandingPage() {
         <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-action" />
         <div className="section-container grid lg:grid-cols-2 gap-20">
           <div className="text-white">
-            <h2 className="text-5xl font-bold mb-8">Get in Touch <br/>with Our Strategy Team</h2>
+            <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br/>with Our Team</h2>
             <p className="text-xl text-brand-soft/60 mb-12">
-              Ready to modernize your healthcare delivery? Let's discuss a solution that fits your exact requirements.
+              Ready to modernize your healthcare delivery? Let's discuss a solution that fits your requirements.
             </p>
 
             <div className="space-y-8">
@@ -354,28 +392,28 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="bg-white p-6 sm:p-10 rounded-[2rem] sm:rounded-[3rem] shadow-2xl mx-auto w-full max-w-2xl lg:max-w-none">
-            <form className="space-y-4 sm:space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="bg-white dark:bg-brand-dark/40 dark:border dark:border-white/10 p-8 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl mx-auto w-full max-w-2xl lg:max-w-none">
+            <form className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-brand-dark mb-2">Full Name</label>
-                  <input type="text" className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Dr. John Doe" />
+                  <label className="block text-sm font-bold text-brand-dark dark:text-white/80 mb-2">Full Name</label>
+                  <input type="text" className="w-full bg-brand-soft/20 dark:bg-white/5 border-transparent dark:text-white rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Dr. John Doe" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-brand-dark mb-2">Organization (Optional)</label>
-                  <input type="text" className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="e.g. City Medical Center" />
+                  <label className="block text-sm font-bold text-brand-dark dark:text-white/80 mb-2">Organization (Optional)</label>
+                  <input type="text" className="w-full bg-brand-soft/20 dark:bg-white/5 border-transparent dark:text-white rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="e.g. City Medical Center" />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-bold text-brand-dark mb-2">Work Email</label>
-                <input type="email" className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="john@hospital.com" />
+                <label className="block text-sm font-bold text-brand-dark dark:text-white/80 mb-2">Work Email</label>
+                <input type="email" className="w-full bg-brand-soft/20 dark:bg-white/5 border-transparent dark:text-white rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="john@hospital.com" />
               </div>
               <div>
-                <label className="block text-sm font-bold text-brand-dark mb-2">How can we help?</label>
-                <textarea rows={4} className="w-full bg-brand-soft/20 border-transparent rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Tell us how we can help with your healthcare needs..."></textarea>
+                <label className="block text-sm font-bold text-brand-dark dark:text-white/80 mb-2">How can we help?</label>
+                <textarea rows={4} className="w-full bg-brand-soft/20 dark:bg-white/5 border-transparent dark:text-white rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Tell us how we can help with your healthcare needs..."></textarea>
               </div>
               <button className="w-full btn-primary py-4 sm:py-5 text-lg font-bold shadow-brand-teal/20 shadow-xl">
-                Send Strategic Request
+                Send a Request
               </button>
             </form>
           </div>
@@ -383,19 +421,19 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-12 border-t">
+      <footer className="bg-white dark:bg-brand-dark py-12 border-t dark:border-white/10">
         <div className="section-container flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
             <div className="relative w-8 h-8 overflow-hidden rounded-lg bg-white">
                <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain p-0.5" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-brand-dark">AZM <span className="text-brand-teal">Nexus</span></span>
+            <span className="text-xl font-bold tracking-tight text-brand-dark dark:text-white">AZM <span className="text-brand-teal">Nexus</span></span>
           </div>
 
-          <p className="text-brand-dark/40 text-sm">
+          <p className="text-brand-dark/40 dark:text-white/40 text-sm text-center">
             © {new Date().getFullYear()} AZM Nexus Limited. All rights reserved. 
-            <span className="mx-2">|</span> 
-            <a href="#" className="hover:text-brand-teal">Privacy Policy</a>
+            <span className="mx-2 hidden sm:inline">|</span> <br className="sm:hidden" />
+            <a href="#" className="hover:text-brand-teal transition-colors">Privacy Policy</a>
           </p>
 
           <div className="flex gap-6">
