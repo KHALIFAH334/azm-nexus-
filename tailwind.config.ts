@@ -11,11 +11,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: "#1A1A2E",      // Deep Space Navy
-          teal: "#FF7F3F",      // Neon Orange
-          action: "#FF4D00",    // Electric Red/Orange
-          lavender: "#9D4EDD",  // Vibrant Purple
-          soft: "#16213E",      // Dark Indigo
+          dark: "#080808",      // Matte Graphite
+          teal: "#CCFF00",      // Electric Lime
+          action: "#111111",    // Stealth Black
+          lavender: "#666666",  // Mid-Grey
+          soft: "#121212",      // Obsidian
         },
       },
       fontFamily: {
