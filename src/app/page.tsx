@@ -122,14 +122,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md shadow-lg border-b border-brand-teal/20 py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="relative w-10 h-10 overflow-hidden rounded-xl shadow-inner bg-white">
             <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain p-1" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-brand-dark dark:text-white">
-            AZM <span className="text-brand-teal">Nexus</span>
+          <span className="text-2xl font-black tracking-tighter text-brand-dark dark:text-white">
+            AZM <span className="text-brand-teal drop-shadow-[0_0_8px_rgba(0,255,209,0.5)]">Nexus</span>
           </span>
         </div>
 
@@ -208,7 +208,7 @@ export default function LandingPage() {
               Healthcare at the <br/>
               <span className="gradient-text">Speed of Connection</span>
             </h1>
-            <p className="text-xl text-brand-dark/70 dark:text-white/60 mb-10 max-w-lg leading-relaxed">
+            <p className="text-xl font-semibold text-brand-dark/80 dark:text-white/80 mb-10 max-w-lg leading-relaxed">
               AZM Nexus bridges the gap between expert care and patient accessibility. 
               Deploying enterprise-grade virtual solutions tailored for the modern medical era.
             </p>
@@ -255,7 +255,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2 }}
-                className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group"
+                className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 hover:border-brand-teal/50 hover:shadow-[0_0_30px_rgba(0,255,209,0.1)] transition-all duration-300 group"
               >
                 <div className={`${sol.color} w-16 h-16 rounded-2xl flex items-center justify-center text-brand-dark mb-6 group-hover:scale-110 transition-transform`}>
                   {sol.icon}
@@ -353,7 +353,7 @@ export default function LandingPage() {
 
             <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
               {CAPABILITIES.map((cap, i) => (
-                <div key={i} className="glass-card p-8 flex gap-6 group hover:bg-brand-teal hover:text-white">
+                <div key={i} className="glass-card p-8 flex gap-6 group hover:bg-brand-teal hover:text-brand-dark hover:shadow-[0_0_40px_rgba(0,255,209,0.2)] transition-all duration-500">
                   <div className="w-12 h-12 bg-brand-soft/40 rounded-xl flex-shrink-0 flex items-center justify-center text-brand-dark group-hover:bg-white">
                     {cap.icon}
                   </div>
@@ -384,8 +384,8 @@ export default function LandingPage() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-brand-soft/40 text-sm font-bold uppercase tracking-wider">Email Us</p>
-                  <p className="text-xl font-medium">azmnexuslimited@gmail.com</p>
+                  <p className="text-brand-teal text-xs font-black uppercase tracking-[0.2em] mb-1">Email Us</p>
+                  <p className="text-2xl font-black text-white">azmnexuslimited@gmail.com</p>
                 </div>
               </div>
 
@@ -395,8 +395,8 @@ export default function LandingPage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-brand-soft/40 text-sm font-bold uppercase tracking-wider">Headquarters</p>
-                  <p className="text-xl font-medium">Nigeria</p>
+                  <p className="text-brand-teal text-xs font-black uppercase tracking-[0.2em] mb-1">Headquarters</p>
+                  <p className="text-2xl font-black text-white">Nigeria</p>
                 </div>
               </div>
             </div>
@@ -419,8 +419,8 @@ export default function LandingPage() {
                 <input type="email" className="w-full bg-brand-soft/20 dark:bg-white/5 border-transparent dark:text-white rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="john@hospital.com" />
               </div>
               <div>
-                <label className="block text-sm font-bold text-brand-dark dark:text-white/80 mb-2">How can we help?</label>
-                <textarea rows={4} className="w-full bg-brand-soft/20 dark:bg-white/5 border-transparent dark:text-white rounded-xl p-4 focus:ring-2 focus:ring-brand-teal outline-none transition-all" placeholder="Tell us how we can help with your healthcare needs..."></textarea>
+                <label className="block text-sm font-black text-brand-teal uppercase tracking-widest mb-3">How can we help?</label>
+                <textarea rows={4} className="w-full bg-brand-soft/10 dark:bg-white/5 border border-white/10 dark:text-white rounded-2xl p-5 focus:ring-2 focus:ring-brand-teal outline-none transition-all placeholder:text-white/20" placeholder="Tell us how we can help with your healthcare needs..."></textarea>
               </div>
               <button className="w-full btn-primary py-4 sm:py-5 text-lg font-bold shadow-brand-teal/20 shadow-xl">
                 Send a Request
