@@ -321,13 +321,13 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-4 gap-4">
             {PROCESS_STEPS.map((step, i) => (
-              <div key={i} className="relative group p-6">
-                <span className="text-6xl font-black text-brand-teal/5 absolute top-0 left-0 group-hover:text-brand-teal/20 transition-colors">
+              <div key={i} className="relative group p-8 rounded-3xl transition-all duration-500 hover:bg-white dark:hover:bg-white/5 shadow-sm hover:shadow-xl">
+                <span className="text-7xl font-black text-brand-teal/10 dark:text-brand-teal/20 absolute -top-2 -left-2 group-hover:text-brand-teal/30 transition-colors">
                   {step.step}
                 </span>
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold mb-3 mt-4 text-brand-dark">{step.title}</h3>
-                  <p className="text-brand-dark/60 text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="text-2xl font-bold mb-4 mt-6 text-brand-dark dark:text-white group-hover:text-brand-teal transition-colors">{step.title}</h3>
+                  <p className="text-brand-dark/70 dark:text-white/60 text-base leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -372,7 +372,7 @@ export default function LandingPage() {
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-brand-dark dark:bg-[#081517] relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-action" />
-        <div className="section-container grid lg:grid-cols-2 gap-20 px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 py-20 grid lg:grid-cols-2 gap-16 lg:gap-20">
           <div className="text-white">
             <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br/>with Our Team</h2>
             <p className="text-xl text-brand-soft/60 mb-12">
@@ -403,7 +403,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-white/5 dark:backdrop-blur-xl dark:border dark:border-white/10 p-6 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl mx-auto w-full max-w-2xl lg:max-w-none overflow-hidden">
+          <div className="bg-white dark:bg-white/5 dark:backdrop-blur-xl dark:border dark:border-white/10 p-7 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl mx-auto w-full max-w-[calc(100vw-2.5rem)] sm:max-w-2xl lg:max-w-none overflow-hidden">
             <form className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
