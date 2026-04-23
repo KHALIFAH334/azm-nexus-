@@ -260,8 +260,8 @@ export default function LandingPage() {
                 <div className={`${sol.color} w-16 h-16 rounded-2xl flex items-center justify-center text-brand-dark mb-6 group-hover:scale-110 transition-transform`}>
                   {sol.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{sol.title}</h3>
-                <p className="text-brand-soft/60 leading-relaxed">
+                <h3 className="text-2xl font-black mb-4 group-hover:text-brand-teal transition-colors drop-shadow-sm">{sol.title}</h3>
+                <p className="text-white dark:text-white font-bold leading-relaxed text-lg">
                   {sol.desc}
                 </p>
               </motion.div>
@@ -325,8 +325,8 @@ export default function LandingPage() {
                   {step.step}
                 </span>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-4 mt-6 text-brand-dark dark:text-white group-hover:text-brand-teal transition-colors">{step.title}</h3>
-                  <p className="text-brand-dark/70 dark:text-white/60 text-base leading-relaxed">{step.desc}</p>
+                  <h3 className="text-2xl font-black mb-4 mt-6 text-brand-dark dark:text-white group-hover:text-brand-teal transition-colors">{step.title}</h3>
+                  <p className="text-brand-dark dark:text-white font-bold text-base leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -358,8 +358,8 @@ export default function LandingPage() {
                     {cap.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold mb-2">{cap.title}</h4>
-                    <p className="text-sm opacity-70 leading-relaxed">{cap.desc}</p>
+                    <h4 className="font-black text-lg mb-2">{cap.title}</h4>
+                    <p className="text-sm font-bold text-white/90 leading-relaxed">{cap.desc}</p>
                   </div>
                 </div>
               ))}
