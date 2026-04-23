@@ -11,11 +11,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: "#0B0E14",      // Carbon
-          teal: "#7DF9FF",      // Electric Blue
-          action: "#B026FF",    // Neon Purple
-          lavender: "#F0F0F0",  // Silver
-          soft: "#152238",      // Deep Blue
+          dark: "#0D1117",      // GitHub Deep Dark
+          teal: "#39FF14",      // Neon Green (Toxic)
+          action: "#00D1FF",    // Electric Blue
+          lavender: "#8B5CF6",  // Purple Haze
+          soft: "#161B22",      // Slate Grey
         },
       },
       fontFamily: {
