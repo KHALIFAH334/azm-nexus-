@@ -371,8 +371,8 @@ export default function LandingPage() {
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-brand-dark relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-action" />
-        <div className="max-w-[100vw] mx-auto px-4 sm:px-10 lg:px-12 py-20 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center overflow-hidden">
-          <div className="text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-12 py-20 flex flex-col lg:flex-row gap-16 lg:gap-24 items-center justify-center overflow-hidden">
+          <div className="text-white w-full lg:w-1/2">
             <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br />with Our Team</h2>
             <p className="text-2xl text-brand-teal font-black mb-12 drop-shadow-[0_0_12px_rgba(0,255,209,0.3)]">
               Ready to modernize your healthcare delivery? Let's discuss a solution that fits your requirements.
@@ -402,8 +402,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="w-full flex justify-center lg:block px-2">
-            <div className="bg-white dark:bg-white/5 dark:backdrop-blur-xl dark:border dark:border-white/10 p-6 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl w-full max-w-[calc(100vw-3rem)] sm:max-w-2xl lg:max-w-none mx-auto overflow-hidden">
+          <div className="w-full lg:w-1/2 flex justify-center px-4">
+            <div className="bg-white dark:bg-white/5 dark:backdrop-blur-xl dark:border dark:border-white/10 p-6 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl w-full max-w-[min(100%,480px)] overflow-hidden">
             <form className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
