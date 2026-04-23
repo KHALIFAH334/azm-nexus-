@@ -243,7 +243,7 @@ export default function LandingPage() {
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Core Solutions</h2>
-            <p className="text-brand-soft/80 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p className="text-brand-teal dark:text-brand-teal font-black max-w-2xl mx-auto text-xl leading-relaxed drop-shadow-[0_0_10px_rgba(0,255,209,0.2)]">
               We provide the digital backbone for modern medical facilities with focus on security, usability, and clinical precision.
             </p>
           </div>
@@ -374,7 +374,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 py-20 grid lg:grid-cols-2 gap-16 lg:gap-20">
           <div className="text-white">
             <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br />with Our Team</h2>
-            <p className="text-xl text-brand-soft/60 mb-12">
+            <p className="text-2xl text-brand-teal font-black mb-12 drop-shadow-[0_0_12px_rgba(0,255,209,0.3)]">
               Ready to modernize your healthcare delivery? Let's discuss a solution that fits your requirements.
             </p>
 
