@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Menu, X, Activity, Shield, Users, Globe, BarChart3, 
+import {
+  Menu, X, Activity, Shield, Users, Globe, BarChart3,
   Smartphone, MessageSquare, Zap, Target, Search, Settings,
   CheckCircle2, Mail, Phone, MapPin, ArrowRight, Instagram, Twitter, Linkedin,
   Moon, Sun
@@ -74,7 +74,7 @@ const Navbar = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setIsDark(true);
       document.documentElement.classList.add('dark');
@@ -102,7 +102,7 @@ const Navbar = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setIsOpen(false);
-    
+
     // Increased delay and manual scroll calculation to ensure it works after menu closes
     setTimeout(() => {
       const element = document.getElementById(id);
@@ -140,7 +140,7 @@ const Navbar = () => {
               {sec.label}
             </a>
           ))}
-          <button 
+          <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-brand-soft/20 dark:hover:bg-white/10 transition-colors text-brand-dark dark:text-white"
           >
@@ -151,7 +151,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle & Theme Toggle */}
         <div className="flex items-center gap-4 md:hidden">
-          <button 
+          <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-brand-soft/20 dark:hover:bg-white/10 transition-colors text-brand-dark dark:text-white"
           >
@@ -205,11 +205,11 @@ export default function LandingPage() {
               NEXT-GEN TELEMEDICINE
             </span>
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 dark:text-white">
-              Healthcare at the <br/>
+              Healthcare at the <br />
               <span className="gradient-text">Speed of Connection</span>
             </h1>
             <p className="text-xl font-semibold text-brand-dark/80 dark:text-white/80 mb-10 max-w-lg leading-relaxed">
-              AZM Nexus bridges the gap between expert care and patient accessibility. 
+              AZM Nexus bridges the gap between expert care and patient accessibility.
               Deploying enterprise-grade virtual solutions tailored for the modern medical era.
             </p>
             <div className="flex flex-col sm:row gap-4">
@@ -277,24 +277,24 @@ export default function LandingPage() {
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-lavender/20 rounded-full blur-2xl" />
               <div className="relative glass-card p-4">
-                 <div className="aspect-video bg-brand-dark rounded-xl flex items-center justify-center text-white">
-                    <Users className="w-24 h-24 opacity-50" />
-                 </div>
+                <div className="aspect-video bg-brand-dark rounded-xl flex items-center justify-center text-white">
+                  <Users className="w-24 h-24 opacity-50" />
+                </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-brand-action p-8 rounded-2xl text-brand-dark shadow-xl">
-                 <p className="text-3xl font-bold">100%</p>
-                 <p className="font-medium text-xs">Compliance Guaranteed</p>
+                <p className="text-3xl font-bold">100%</p>
+                <p className="font-medium text-xs">Compliance Guaranteed</p>
               </div>
             </div>
 
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Vision for <br/><span className="text-brand-teal">Global Health Integrity</span></h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Vision for <br /><span className="text-brand-teal">Global Health Integrity</span></h2>
               <p className="text-lg text-brand-dark/70 mb-8 leading-relaxed">
-                Founded on the belief that geography should not dictate the quality of care, 
-                AZM Nexus has evolved into a global leader in telemedicine strategy and deployment. 
+                Founded on the belief that geography should not dictate the quality of care,
+                AZM Nexus has evolved into a global leader in telemedicine strategy and deployment.
                 Our team combines medical expertise with cutting-edge engineering.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-8">
                 {STATS.map((stat, i) => (
                   <div key={i}>
@@ -339,15 +339,15 @@ export default function LandingPage() {
         <div className="section-container">
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
-              <h2 className="text-4xl font-bold mb-6 leading-tight">Advanced <br/>Technological <br/><span className="text-brand-teal">Capabilities</span></h2>
+              <h2 className="text-4xl font-bold mb-6 leading-tight">Advanced <br />Technological <br /><span className="text-brand-teal">Capabilities</span></h2>
               <p className="text-brand-dark/60 mb-8">
                 Built on a scalable microservices architecture to provide institutional robustness.
               </p>
               <div className="flex gap-4">
-                 <div className="w-12 h-12 rounded-full border border-brand-teal flex items-center justify-center text-brand-teal">
-                    <CheckCircle2 className="w-6 h-6" />
-                 </div>
-                 <p className="text-sm font-medium pt-3">HIPAA / GDPR Ready</p>
+                <div className="w-12 h-12 rounded-full border border-brand-teal flex items-center justify-center text-brand-teal">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <p className="text-sm font-medium pt-3">HIPAA / GDPR Ready</p>
               </div>
             </div>
 
@@ -373,7 +373,7 @@ export default function LandingPage() {
         <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-action" />
         <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 py-20 grid lg:grid-cols-2 gap-16 lg:gap-20">
           <div className="text-white">
-            <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br/>with Our Team</h2>
+            <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br />with Our Team</h2>
             <p className="text-xl text-brand-soft/60 mb-12">
               Ready to modernize your healthcare delivery? Let's discuss a solution that fits your requirements.
             </p>
@@ -435,13 +435,13 @@ export default function LandingPage() {
         <div className="section-container flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
             <div className="relative w-8 h-8 overflow-hidden rounded-lg bg-white">
-               <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain p-0.5" />
+              <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain p-0.5" />
             </div>
             <span className="text-xl font-bold tracking-tight text-brand-dark dark:text-white">AZM <span className="text-brand-teal">Nexus</span></span>
           </div>
 
           <p className="text-brand-dark/40 dark:text-white/40 text-sm text-center">
-            © {new Date().getFullYear()} AZM Nexus Limited. All rights reserved. 
+            © {new Date().getFullYear()} AZM Nexus Limited. All rights reserved.
             <span className="mx-2 hidden sm:inline">|</span> <br className="sm:hidden" />
             <a href="#" className="hover:text-brand-teal transition-colors">Privacy Policy</a>
           </p>
