@@ -201,7 +201,7 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-brand-teal bg-brand-soft/50 rounded-full">
+            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-wider text-brand-teal bg-brand-soft/50 dark:bg-brand-teal/20 rounded-full">
               NEXT-GEN TELEMEDICINE
             </span>
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 dark:text-white">
@@ -229,10 +229,9 @@ export default function LandingPage() {
             className="relative"
           >
             <div className="absolute -inset-4 bg-brand-teal/10 rounded-full blur-3xl" />
-            <div className="relative glass-card aspect-square flex items-center justify-center overflow-hidden border-8 border-white">
-              <div className="text-brand-teal flex flex-col items-center">
-                 <Activity className="w-48 h-48 animate-pulse" />
-                 <p className="font-bold text-2xl tracking-widest mt-4">AZM NEXUS</p>
+            <div className="relative glass-card aspect-square flex items-center justify-center overflow-hidden border-8 border-white dark:border-white/10 dark:bg-white/5">
+              <div className="relative w-2/3 h-2/3 animate-pulse">
+                <Image src="/logo.jpeg" alt="AZM Nexus Logo" fill className="object-contain" />
               </div>
             </div>
           </motion.div>
@@ -314,7 +313,7 @@ export default function LandingPage() {
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Methodology</h2>
-            <p className="text-brand-dark/60 max-w-2xl mx-auto">
+            <p className="text-brand-dark/60 dark:text-white/60 max-w-2xl mx-auto">
               A structured approach to clinical digitization that ensures reliability and scalability.
             </p>
           </div>
