@@ -193,7 +193,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden dark:bg-[#0F2529]">
+      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden dark:bg-brand-dark">
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-brand-soft/30 dark:from-brand-teal/10 to-transparent rounded-bl-full" />
         <div className="section-container grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -271,7 +271,7 @@ export default function LandingPage() {
       </section>
 
       {/* About Section & Stats */}
-      <section id="about" className="py-24 overflow-hidden dark:bg-[#0F2529]">
+      <section id="about" className="py-24 overflow-hidden dark:bg-brand-dark">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
@@ -335,7 +335,7 @@ export default function LandingPage() {
       </section>
 
       {/* Capabilities Section */}
-      <section id="capabilities" className="py-24 dark:bg-[#0F2529]">
+      <section id="capabilities" className="py-24 dark:bg-brand-dark">
         <div className="section-container">
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
@@ -369,7 +369,7 @@ export default function LandingPage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-brand-dark dark:bg-[#081517] relative overflow-hidden">
+      <section id="contact" className="py-24 bg-brand-dark relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-action" />
         <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12 py-20 grid lg:grid-cols-2 gap-16 lg:gap-20">
           <div className="text-white">
@@ -396,7 +396,7 @@ export default function LandingPage() {
                 </div>
                 <div>
                   <p className="text-brand-soft/40 text-sm font-bold uppercase tracking-wider">Headquarters</p>
-                  <p className="text-xl font-medium">Germany</p>
+                  <p className="text-xl font-medium">Nigeria</p>
                 </div>
               </div>
             </div>

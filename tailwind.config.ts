@@ -11,11 +11,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: "#183D43",      // Deep teal (Primary Dark)
-          teal: "#008272",      // Vibrant Teal (Primary Brand)
-          action: "#DAFA3B",    // Lime green (Call to Action)
-          lavender: "#C0A9FF",  // Soft Lavender (Accent)
-          soft: "#A2DBD2",      // Light Teal (Background)
+          dark: "#0F172A",      // Midnight Navy
+          teal: "#10B981",      // Emerald Green
+          action: "#F59E0B",    // Amber Gold
+          lavender: "#8B5CF6",  // Violet
+          soft: "#F0FDFA",      // Mint White
         },
       },
       fontFamily: {

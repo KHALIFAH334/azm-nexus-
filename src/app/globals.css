@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply bg-white dark:bg-[#0F2529] text-brand-dark dark:text-white overflow-x-hidden;
+  @apply bg-white dark:bg-brand-dark text-brand-dark dark:text-white overflow-x-hidden;
   scroll-behavior: smooth;
 }
 
