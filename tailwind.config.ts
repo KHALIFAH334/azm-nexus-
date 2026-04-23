@@ -11,11 +11,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: "#080808",      // Matte Graphite
-          teal: "#CCFF00",      // Electric Lime
-          action: "#111111",    // Stealth Black
-          lavender: "#666666",  // Mid-Grey
-          soft: "#121212",      // Obsidian
+          dark: "#0D0D0D",      // Charcoal Black
+          teal: "#00FFD1",      // Aquamarine (Neon)
+          action: "#FF00FF",    // Magenta (Electric)
+          lavender: "#7F00FF",  // Purple (Deep)
+          soft: "#1A1A1A",      // Dark Grey
         },
       },
       fontFamily: {
