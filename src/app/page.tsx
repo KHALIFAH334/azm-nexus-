@@ -243,7 +243,7 @@ export default function LandingPage() {
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Core Solutions</h2>
-            <p className="text-brand-teal dark:text-brand-teal font-black max-w-2xl mx-auto text-xl leading-relaxed drop-shadow-[0_0_10px_rgba(0,255,209,0.2)]">
+            <p className="text-brand-teal dark:text-brand-teal font-black max-w-2xl mx-auto text-xl leading-relaxed drop-shadow-sm">
               We provide the digital backbone for modern medical facilities with focus on security, usability, and clinical precision.
             </p>
           </div>
@@ -289,7 +289,7 @@ export default function LandingPage() {
 
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Vision for <br /><span className="text-brand-teal">Global Health Integrity</span></h2>
-              <p className="text-lg text-white font-bold mb-8 leading-relaxed">
+              <p className="text-lg text-brand-dark dark:text-white font-bold mb-8 leading-relaxed">
                 Founded on the belief that geography should not dictate the quality of care, 
                 AZM Nexus has evolved into a global leader in telemedicine strategy and deployment. 
                 Our team combines medical expertise with cutting-edge engineering.
@@ -340,7 +340,7 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold mb-6 leading-tight">Advanced <br />Technological <br /><span className="text-brand-teal">Capabilities</span></h2>
-              <p className="text-white font-bold mb-8">
+              <p className="text-brand-dark dark:text-white font-bold mb-8">
                 Built on a scalable microservices architecture to provide institutional robustness.
               </p>
               <div className="flex gap-4">
@@ -374,7 +374,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-12 py-20 flex flex-col lg:flex-row gap-16 lg:gap-24 items-center justify-center overflow-hidden">
           <div className="text-white w-full lg:w-1/2">
             <h2 className="text-5xl font-bold mb-8 leading-tight">Get in Touch <br />with Our Team</h2>
-            <p className="text-2xl text-brand-teal font-black mb-12 drop-shadow-[0_0_12px_rgba(0,255,209,0.3)]">
+            <p className="text-2xl text-brand-teal dark:text-brand-teal font-black mb-12 drop-shadow-sm">
               Ready to modernize your healthcare delivery? Let's discuss a solution that fits your requirements.
             </p>
 
