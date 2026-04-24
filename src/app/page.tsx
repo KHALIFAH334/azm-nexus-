@@ -379,24 +379,24 @@ export default function LandingPage() {
             </p>
 
             <div className="space-y-8">
-              <div className="flex gap-6 items-center">
-                <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-brand-action">
+              <div className="flex gap-4 sm:gap-6 items-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-2xl flex-shrink-0 flex items-center justify-center text-brand-teal">
                   <Mail className="w-6 h-6" />
                 </div>
-                <div>
-                  <p className="text-brand-teal text-xs font-black uppercase tracking-[0.2em] mb-1">Email Us</p>
-                  <p className="text-2xl font-black text-white">azmnexuslimited@gmail.com</p>
+                <div className="min-w-0">
+                  <p className="text-brand-teal text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-1">Email Us</p>
+                  <p className="text-lg sm:text-2xl font-black text-white break-all sm:break-normal">azmnexuslimited@gmail.com</p>
                 </div>
               </div>
 
 
-              <div className="flex gap-6 items-center">
-                <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-brand-action">
+              <div className="flex gap-4 sm:gap-6 items-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-2xl flex-shrink-0 flex items-center justify-center text-brand-teal">
                   <MapPin className="w-6 h-6" />
                 </div>
-                <div>
-                  <p className="text-brand-teal text-xs font-black uppercase tracking-[0.2em] mb-1">Headquarters</p>
-                  <p className="text-2xl font-black text-white">Nigeria</p>
+                <div className="min-w-0">
+                  <p className="text-brand-teal text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-1">Headquarters</p>
+                  <p className="text-lg sm:text-2xl font-black text-white">Nigeria</p>
                 </div>
               </div>
             </div>
