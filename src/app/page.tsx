@@ -208,7 +208,7 @@ export default function LandingPage() {
               Healthcare at the <br />
               <span className="gradient-text">Speed of Connection</span>
             </h1>
-            <p className="text-xl font-semibold text-brand-dark/80 dark:text-white/80 mb-10 max-w-lg leading-relaxed">
+            <p className="text-xl font-bold text-brand-dark/80 dark:text-white mb-10 max-w-lg leading-relaxed">
               AZM Nexus bridges the gap between expert care and patient accessibility.
               Deploying enterprise-grade virtual solutions tailored for the modern medical era.
             </p>
@@ -289,9 +289,9 @@ export default function LandingPage() {
 
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Vision for <br /><span className="text-brand-teal">Global Health Integrity</span></h2>
-              <p className="text-lg text-brand-dark/70 mb-8 leading-relaxed">
-                Founded on the belief that geography should not dictate the quality of care,
-                AZM Nexus has evolved into a global leader in telemedicine strategy and deployment.
+              <p className="text-lg text-white font-bold mb-8 leading-relaxed">
+                Founded on the belief that geography should not dictate the quality of care, 
+                AZM Nexus has evolved into a global leader in telemedicine strategy and deployment. 
                 Our team combines medical expertise with cutting-edge engineering.
               </p>
 
@@ -313,7 +313,7 @@ export default function LandingPage() {
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Methodology</h2>
-            <p className="text-brand-dark/60 dark:text-white/60 max-w-2xl mx-auto">
+            <p className="text-brand-dark/60 dark:text-white max-w-2xl mx-auto">
               A structured approach to clinical digitization that ensures reliability and scalability.
             </p>
           </div>
@@ -340,7 +340,7 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1">
               <h2 className="text-4xl font-bold mb-6 leading-tight">Advanced <br />Technological <br /><span className="text-brand-teal">Capabilities</span></h2>
-              <p className="text-brand-dark/60 mb-8">
+              <p className="text-white font-bold mb-8">
                 Built on a scalable microservices architecture to provide institutional robustness.
               </p>
               <div className="flex gap-4">
@@ -442,7 +442,7 @@ export default function LandingPage() {
             <span className="text-xl font-bold tracking-tight text-brand-dark dark:text-white">AZM <span className="text-brand-teal">Nexus</span></span>
           </div>
 
-          <p className="text-brand-dark/40 dark:text-white/40 text-sm text-center">
+          <p className="text-brand-dark/40 dark:text-white text-sm text-center font-bold">
             © {new Date().getFullYear()} AZM Nexus Limited. All rights reserved.
             <span className="mx-2 hidden sm:inline">|</span> <br className="sm:hidden" />
             <a href="#" className="hover:text-brand-teal transition-colors">Privacy Policy</a>
